@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<title>TODO LIST</title>
+<style>
+    @media (min-width: 602px) {
+        .container{
+            width:400px;
+        }
+    }
+    @media (max-width: 602px) {
+        .container{
+            width:400px;
+            font-family:cambria;
+        }
+    }
+</style>
+</head>
+<body>
+    
+<header id="main-header" class="bg-success text-white p-4 mb-3">
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1 id="header-title">Todo List</h1>
+        </div>
+        <div class="col-md-6 align-self-center">
+            <input type="text" .class="form-control" id="filter" placeholder="Cari">
+        </div>
+    </div>
+    
+</div>
+</header>
+
+<div class="container">
+    <div id="main" class="card card-body">
+        <h2 class="title">Daftar Tugas</h2>
+        <form id="addForm" class="form-inline mb-3">
+            <input type="text" class="form-control mr-2" id="item">
+            <input type="submit" class="btn btn-dark" value="Submit">
+        </form>
+        <h2 class="title ml-3">Daftar Tugas</h2>
+        <ul id="items" class="list-group">
+            <li class="list-group-item">Item 1 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+            <li class="list-group-item">Item 2 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+            <li class="list-group-item">Item 3 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+            <li class="list-group-item">Item 4 <button class="btn btn-danger btn-sm float-right delete">X</button></li>
+          </ul>
+          <div id="output"></div>
+          <br>
+          <button class="btn btn-dark" id="button">Terima kasih sudah mencoba :)</button>
+          <br>
+          <!-- <div id="box" style="width:300px; height:300px; background-color:#ddd;"></div> -->
+    </div>
+</div>
+<script>
+var form = document.getElementById('addForm');
+var itemList = document.getElementById('items');
+
+// form submit event
+form.addEventListener('submit', addItem);
+
+// deleted item
+itemList.addEventListener('click', removeItem);
+// add item
+function addItem(e) {
+    e.preventDefault();
+    
+
+    // get input value
+    var newItem = document.getElementById('item').value;
+
+    // create new li element
+    var li = document.createElement('li');
+    var deletebtn = document.createElement('button');
+    // add class
+    li.className = 'list-group-item';
+
+
+    // delete btn
+    deletebtn.className = 'btn btn-danger btn-sm float-right delete';
+ 
+    li.appendChild(document.createTextNode(newItem));
+    deletebtn.appendChild(document.createTextNode('X'));
+
+    //add text node with input value
+    li.appendChild(deletebtn);
+    itemList.appendChild(li);
+}
+
+// remove item
+function removeItem(e) {
+    if(e.target.classList.contains('delete')){
+        if(confirm('Apakah Kamu Yakin Hapus ? ')){
+            var li = e.target.parentElement;
+            itemList.removeChild(li);
+        }
+    }
+}
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>

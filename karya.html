@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dosis&family=Yanone+Kaffeesatz&display=swap" rel="stylesheet">
+  
+    <title>KARYA PULSA</title>
+    <style>
+    th, tr, td{
+     border-radius:10px
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'times new roman';
+        }
+        .row {
+            margin: 100px;
+            cursor: pointer;
+        }
+        @media screen and (max-width:702px) {
+            .row {
+                margin: 10px;
+            }
+        }     
+        .button a {
+            border: 3px solid greenyellow;
+            padding: 7px;
+            background-color: #17a2b8;
+            ;
+            text-decoration: none;
+            border-radius: 0.50em;
+            color: black;
+            transition: transform 2s, background 2s, color 2s, border 3s;
+            font-size: 15px;
+            font-family: cambria;
+        }       
+        .button {
+            display: flex;
+            flex-wrap: wrap;
+            grid-gap: 4px;
+            align-items: center;
+            justify-content: center;
+        } 
+        .button a:hover {
+            background-color: yellowgreen;
+            color: white;
+            transform: scale(2px);
+            border: 3px solid yellow;
+        }
+        .wrapper {
+            max-width: 1200px;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-items: center;
+            justify-content: space-between;
+            margin-top: 20px;
+            margin-bottom: 50px;
+            margin: 10px auto;
+        }
+        .wrapper .box {
+            background-color: #fff;
+            border-radius: 1em;
+            padding: 20px;
+            width: calc(33% - 10px);
+            border: 2px solid dodgerblue;
+            transition: transform 2s, background 2s;
+            box-shadow: 5px 0 5px 5px gray;
+        }
+        .wrapper .box i.quote {
+            font-size: 20px;
+            color: #17a2b8;
+        }
+        .wrapper .box .content {
+            padding-top: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .wrapper .box .info .name {
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .wrapper .box .info .job {
+            color: #17a2b8;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        .box .info .stars {
+            color: #17a2b8;
+        }
+        .box i {
+            padding: 10px;
+        }
+        .box p {
+            font-family: 'Dosis', sans-serif;
+        }
+        .box .content .image img {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            border: 3px solid #17a2b8;
+        }
+        .box:hover {
+            background-color: #ebe858;
+            cursor: pointer;
+        }
+        .row .box {
+            background-color: #fff;
+            border-radius: 1em;
+            padding: 20px;
+            width: calc(33% - 10px);
+            border: 2px solid dodgerblue;
+            transition: transform 2s, background 2s;
+            display: block;
+            box-shadow: 5px 0 5px 5px gray;
+        }
+        @media(max-width:1200px) {
+            .wrapper .box {
+                width: calc(50% -10px);
+                margin: 10px 0;
+            }
+        }
+        @media(max-width:702px) {
+            .wrapper .box {
+                width: 100%;
+            }
+            .button {
+                display: flex;
+                flex-wrap: wrap;
+            }
+        }
+        .jumbotron {
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding-top: 78px;
+            background-image: url(bgkeren2.jpg);
+        }
+        .jumbotron img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .jumbotron h3 {
+            color: black;
+            font-family: 'Luckiest Guy', cursive;
+            margin: 11px;
+        }
+        .jumbotron h4 {
+            border: 1px solid gray;
+            width: 220px;
+            padding: 7px;
+            border-radius: 1em;
+            text-align: center;
+            margin: 10px auto;
+            font-family: 'Dosis', sans-serif;
+            font-size: 18px;
+        }
+        .jumbotron h4:hover {
+            background-color: #333;
+            color: whitesmoke;
+            cursor: pointer;
+        }
+        .jumbotron p {
+            display: none;
+            color: black;
+        }
+        .judul h2 {
+            text-align: center;
+            padding: 5px;
+            border-bottom: 5px solid #333;
+            font-family: cambria;
+            width: 210px;
+            align-items: center;
+            margin: 20px auto;
+            justify-content: center;
+        }
+        td {
+            font-size: 13px;
+        }
+        span {
+            font-family: monospace;
+            color: white;
+        }
+        nav a {
+            font-family: cambria;
+            font-weight: bold;
+        }
+        #deposit img {
+            width: 300px;
+        }
+        #deposit h1 {
+            font-size: 23px;
+            border-bottom: 5px solid #333;
+            margin: 20px auto;
+            width: 210px;
+        }
+        svg {
+            color: salmon;
+        }
+        #ftr {
+            position: relative;
+            left: 0;
+            text-decoration: none;
+            font-size: 14px;
+            list-style: none;
+        }
+        ul i {
+            font-size: 14px;
+            padding: 5px;
+            text-align: right;
+        }
+        footer li {
+            font-family: 'Dosis', sans-serif;
+        }
+        .item p {
+            font-family: 'Dosis', sans-serif;
+            font-size: 18px;
+        }
+        /* filter jquery */
+        .ptoken{
+            display: none;
+        }
+        .ptsel{
+            display:none;
+        }
+        .pxl{
+            display:none;
+        }
+        .pthree{
+            display:none;
+        }
+        .pindosat{
+            display:none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+
+        <a class="navbar-brand" href="#">KARYA PULSA</a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#deposit">DEPOSIT</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> MENU </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#token">TOKEN</a>
+                        <a class="dropdown-item" href="#tsel">TELKOMSEL</a>
+                        <a class="dropdown-item" href="#xl">AXIS/XL</a>
+                        <a class="dropdown-item" href="#three">THREE</a>
+                        <a class="dropdown-item" href="#">SMARTFREN</a>
+                        <a class="dropdown-item" href="#">INDOSAT</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron text-center">
+        <div class="frame">
+            <marquee><img src="https://doratoon.com/static/img/laihua-pace.png"></marquee>
+        </div>
+        <img data-aos="fade-up-right" src="karya.jpg">
+
+        <h3 data-aos="fade-up-right">Karya Pulsa</h3>
+
+        <h4 data-aos="fade-up-right" id="btn"><a href="todolist.html">Aplikasi Todo List</a></h4>
+
+        <p id="ikon"><i class="bi bi-instagram"></i> <i class="bi-github" role="img" aria-label="GitHub"></i> <i class="bi bi-chat-left-dots-fill"></i> <i class="bi bi-telegram"></i> <i class="bi bi-whatsapp"></i></p>
+    </div>
+
+    <h1 class="text-center">MENGAPA MEMILIH KARYA PULSA</h1>
+
+    <div class="item text-center">
+        <div data-aos="zoom-in-up" data-aos-duration="1000" class="card1">
+            <img src="https://img.icons8.com/office/86/000000/card-security.png">
+            <h3>AMANAH</h3>
+            <p>Saldo deposit lebih aman tanpa harus khawatir dan tersedia banyak jalur deposit melalui Bank BCA, MANDIRI, BNI, BRI, dll.</p>
+
+        </div>
+        <div data-aos="zoom-in-up" data-aos-duration="2000" class="card1">
+            <img src="https://img.icons8.com/fluency/86/000000/positive-dynamic.png">
+            <h3>SUPPORT LAYANAN</h3>
+            <p>Kami terus melakukan inovasi dan penambahan fitur, sehingga transaksi semakin lancar dengan harga termurah dan bantuan cs yang ramah</p>
+        </div>
+    </div>
+
+    <div data-aos="zoom-in-up" data-aos-duration="3000" class="item text-center">
+        <div class="card1">
+            <img src="https://img.icons8.com/fluency/86/000000/people-working-together.png" />
+            <h3>Bantuan CS Ramah</h3>
+            <p>Anda akan menemukan banyak kemudahan selama melakukan transaksi karena cs siap mengawal dan mengecek transaksi</p>
+
+        </div>
+        <div data-aos="zoom-in-up" data-aos-duration="4000" class="card1">
+            <img src="https://img.icons8.com/officel/86/000000/bank-cards.png" />
+            <h3>Pendaftaran Gratis</h3>
+            <p>Tanpa biaya pendaftaran 100% Gratis, setelah mendaftar akun anda langsung aktif dan dapat melakukan deposit tanpa biaya admin 100%</p>
+        </div>
+    </div>
+
+    <div class="row text-center">
+        <div class="col-sm-12">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <tr>
+                        <th id="token" class="bg-info" font-family="cambria" colspan="3">TOKEN<br>
+                            <span>pln20.idpelanggan.pin</span></th>
+                    </tr>
+                    
+                </thead>
+                <tbody class="ptoken">
+                  <tr class="bg-info">
+                        <th>Nama Produk</th>
+                        <th>Harga Produk</th>
+                        <th>Status Produk</th>
+                    </tr>
+                    <tr>
+                        <td>TOKEN 20</td>
+                        <td>20350</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TOKEN 50</td>
+                        <td>50350</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TOKEN 100</td>
+                        <td>100350</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TOKEN 200</td>
+                        <td>200350</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TOKEN 500</td>
+                        <td>500350</td>
+                        <td>ADA</td>
+                    </tr>
+                </tbody>
+              <br><br>
+                <thead>
+                    <tr>
+                        <th id="tsel" class="bg-info" font-family="cambria" colspan="3">TELKOMSEL<br><span>5.nomor tujuan.pin</span></th>
+
+                    </tr>
+                </thead>
+                <tbody class="ptsel">
+<tr class="bg-info">
+                        <th>Nama Produk</th>
+                        <th>Harga Produk</th>
+                        <th>Status Produk</th>
+                    </tr>
+                    <tr>
+
+                        <td>TELKOMSEL 5.000</td>
+                        <td>5600</td>
+                        <td>ADA</td>
+
+                    </tr>
+                    </a>
+                    <tr>
+                        <td>TELKOMSEL 10.000</td>
+                        <td>10600</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 15.000</td>
+                        <td>15300</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 20.000</td>
+                        <td>20300</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 25.000</td>
+                        <td>25.400</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 30.000</td>
+                        <td>30.700</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 35.000</td>
+                        <td>35.700</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 40.000</td>
+                        <td>40.700</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 45.000</td>
+                        <td>45.700</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 50.000</td>
+                        <td>50.400</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 60.000</td>
+                        <td>60.700</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 65.000</td>
+                        <td>65.700</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 70.000</td>
+                        <td>70.700</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 75.000</td>
+                        <td>75.700</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 80.000</td>
+                        <td>80.700</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 85.000</td>
+                        <td>85.700</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 90.000</td>
+                        <td>90.700</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 95.000</td>
+                        <td>95.700</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>TELKOMSEL 100.000</td>
+                        <td>98.000</td>
+                        <td>ADA</td>
+                    </tr>
+
+                </tbody>
+
+                <thead>
+                    <tr>
+                        <th id="xl" class="bg-info" font-family="cambria" colspan="3">AXIS/XL<br><span>5.nomor tujuan.pin</span></th>
+
+                    </tr>
+                </thead>
+                <tbody class="pxl">
+                    <tr class="bg-info">
+                        <th>Nama Produk</th>
+                        <th>Harga Produk</th>
+                        <th>Status Produk</th>
+                    </tr>
+                    <tr>
+                        <td>AXIS/XL 5.OOO</td>
+                        <td>5.900</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>AXIS/XL 10.OOO</td>
+                        <td>10.875</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>AXIS/XL 15.OOO</td>
+                        <td>15.350</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>AXIS/XL 25.OOO</td>
+                        <td>25.350</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>AXIS/XL 30.OOO</td>
+                        <td>30.350</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>AXIS/XL 50.OOO</td>
+                        <td>50.400</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>AXIS/XL 100.OOO</td>
+                        <td>100.500</td>
+                        <td>ADA</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th id="three" class="bg-info" font-family="cambria" colspan="3">THREE<br><span>5.nomor tujuan.pin</span></th>
+                    </tr>
+                </thead>
+                <tbody class="pthree">
+                    <tr class="bg-info">
+                        <th>Nama Produk</th>
+                        <th>Harga Produk</th>
+                        <th>Status Produk</th>
+                    </tr>
+                    <tr>
+                        <td>THREE 5.000</td>
+                        <td>5.600</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>THREE 10.000</td>
+                        <td>10.600</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>THREE 20.000</td>
+                        <td>19.900</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>THREE 30.000</td>
+                        <td>29.900</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>THREE 50.000</td>
+                        <td>49.200</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>THREE 100.000</td>
+                        <td>97.900</td>
+                        <td>ADA</td>
+                    </tr>
+                </tbody>
+                <thead>
+                    <tr>
+                        <th id="indosat" class="bg-info" font-family="cambria" colspan="3">INDOSAT<br><span>5.nomor tujuan.pin</span></th>
+                    </tr>
+                </thead>
+                <tbody class="pindosat">
+                    <tr class="bg-info">
+                        <th>Nama Produk</th>
+                        <th>Harga Produk</th>
+                        <th>Status Produk</th>
+                    </tr>
+                    <tr>
+                        <td>INDOSAT 5.000</td>
+                        <td>5.990</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>INDOSAT 10.000</td>
+                        <td>10.975</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>INDOSAT 15.000</td>
+                        <td>15.875</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>INDOSAT 20.000</td>
+                        <td>20.350</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>INDOSAT 25.000</td>
+                        <td>25.350</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>INDOSAT 30.000</td>
+                        <td>30.350</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>INDOSAT 40.000</td>
+                        <td>40.350</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>INDOSAT 50.000</td>
+                        <td>49.350</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>INDOSAT 60.000</td>
+                        <td>60.750</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>INDOSAT 70.000</td>
+                        <td>70.750</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>INDOSAT 80.000</td>
+                        <td>80.750</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>INDOSAT 90.000</td>
+                        <td>90.750</td>
+                        <td>ADA</td>
+                    </tr>
+                    <tr>
+                        <td>INDOSAT 100.000</td>
+                        <td>97.500</td>
+                        <td>ADA</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+    <div class="judul">
+        <h2>Testimoni</h2>
+    </div>
+    <div class="wrapper">
+        <div class="box">
+            <p><i class="fas fa-quote-left quote"></i>Sangat membantu saat pandemi ini kita bisa usaha kecil"an ada banyak fitur seperti pulsa, top up dana, shopee, ovo, gopay, vocer electrik dan masih banyak lagi<i class="fas fa-quote-right quote"></i></p>
+            <div class="content">
+                <div class="info">
+                    <div class="name">Riki</div>
+                    <div class="job">Design | Developer</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="avatar.png">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+
+            <p><i class="fas fa-quote-left quote"></i>KARYA PULSA, memang the best, harga bersaing dan transaksi juga lancar, yang terpenting csnya juga ramah banget dan fast respon, sangat cocok bagi pemula yang ingin usaha tambahan dengan membuka konter
+                pulsa yuk daftar dan rasakan manfaatnya<i class="fas fa-quote-right quote"></i></p>
+            <div class="content">
+                <div class="info">
+                    <div class="name">Putra Pratama</div>
+                    <div class="job">Programmer | Developer</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="avatar.png">
+                </div>
+            </div>
+        </div>
+        <div class="box">
+
+            <p><i class="fas fa-quote-left quote"></i>Gak nyangka banget bisa ketemu agen yang satu ini dapat pendapatan lumayan harga pun murah",transaksi jugaa lancar dan csnya cepat respon sangat membantu. <i class="fas fa-quote-right quote"></i></p>
+            <div class="content">
+                <div class="info">
+                    <div class="name">Qolbi</div>
+                    <div class="job">Frontend | Developer</div>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                    </div>
+                </div>
+                <div class="image">
+                    <img src="avatar.png">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <ul class="text-left" id="ftr">
+            <li>Alamat kantor : Jln medan marelan pasar 2 barat</li>
+            <li>Email resmi : karyapulsa@gmail.com</li>
+            <li>situs web resmi: karyapulsa.co.id</li>
+            <li>Telepon : 0822-7304-4047</li>
+            <li><i class="bi bi-instagram"></i> <i class="bi-github" role="img" aria-label="GitHub"></i> <i class="bi bi-chat-left-dots-fill"></i> <i class="bi bi-telegram"></i> <i class="bi bi-whatsapp"></i></li>
+        </ul>
+        <p>&copy; Copyright 2021 | KARYA PULSA</p>
+    </footer>
+    <script>
+        $(document).ready(function(){
+        $("#token").click(function(){
+        $(".ptoken").toggle();
+        });
+    });
+        $(document).ready(function(){
+        $("#tsel").click(function(){
+        $(".ptsel").toggle();
+        });
+    });
+        $(document).ready(function(){
+        $("#xl").click(function(){
+        $(".pxl").toggle();
+        });
+    });
+        $(document).ready(function(){
+        $("#three").click(function(){
+        $(".pthree").toggle();
+        });
+    });
+        $(document).ready(function(){
+        $("#indosat").click(function(){
+        $(".pindosat").toggle();
+        });
+    });
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>

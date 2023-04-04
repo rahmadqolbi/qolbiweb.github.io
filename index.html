@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="Description" content="Enter your description here"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<title>Zikir</title>
+<style>
+    body{
+        font-family: Open Sans;
+        background: black;
+    }
+    .list ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+  
+}
+
+.list li {
+  margin: 0 10px;
+ 
+}
+
+.list i{
+  color: white;
+}
+.list button{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border: 2px solid salmon;
+     box-shadow: 0px 0px 20px 0px rgba(233, 23, 1, 0.81), 0px 5px 25px 0px rgba(233, 23, 1, 0.81);
+     background: black;
+}
+
+    .judul{
+        display: flex;
+  align-items: center;
+  justify-content: center;
+  background: black;
+  width: 300px;
+  height: 60px;
+  border: 2px solid pink;
+  border-radius: 10px;
+  margin: 20px auto;
+  box-shadow: 0px 0px 20px 0px rgba(233, 23, 1, 0.81), 0px 5px 25px 0px rgba(233, 23, 1, 0.81);
+    }
+    h3, h4{
+        color: white;
+       
+    }
+    .zikir{
+    
+  align-items: center;
+  justify-content: center;
+  background: black;
+  width: 300px;
+  height: 210px;
+  border: 2px solid pink;
+  border-radius: 10px;
+  margin: 20px auto;
+  box-shadow: 0px 0px 10px 0px rgba(233, 23, 1, 0.81), 0px 5px 15px 0px rgba(233, 23, 1, 0.81);
+    }
+    .tengah {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+    .zikir2{
+    
+    align-items: center;
+    justify-content: center;
+    background: black;
+    width: 200px;
+    height: 200px;
+    border: 10px solid pink;
+    border-radius: 50%;
+    margin: 20px auto;
+    box-shadow: 0px 0px 10px 0px rgba(233, 23, 1, 0.81), 0px 5px 15px 0px rgba(233, 23, 1, 0.81);
+      }
+
+    span{
+        padding: 5px;
+        font-family: serif;
+    }
+    small{
+        color: white;
+        font-size: 15px;
+    }
+
+</style>
+</head>
+<body>
+<audio id="audio" src="https://od.lk/s/MjVfNTkwNTM0Mzdf/alhamdulillah.mp3"></audio>
+
+  <!-- <ul class="nav nav-tabs ">
+    <li class="nav-item">
+      <a href="#" class="nav-link text-white">Home</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-white">Data</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-white">Khasiat</a>
+    </li>
+    <li class="nav-item">
+      <a href="#" class="nav-link text-white">Saran</a>
+    </li>
+  
+    
+  </ul> -->
+
+    <div class="judul text-center">
+        <h3>Zikir Sehari-hari</h3>
+        
+    </div>
+   
+  <div class="zikir text-center">
+    <div class="p-2">
+    <h4>Sholawat</h4>
+    <h2 class="text-white">اَللَّهُمَّ صَلِّ عَلٰى سَيِّدِنَا مُحَمَّدٍ وَعَلٰى آلِ سَيِّدِنَا مُحَمَّدٍ
+</h2>
+    <p class="text-warning mt-2">Ya Allah, berikanlah rahmat-Mu kepada junjungan kami Nabi Muhammad SAW dan keluarga Nabi Muhammad SAW</p>
+    </div>
+  </div>
+  <!-- <button onclick="playAudio()">Play</button> -->
+<!-- <button onclick="pauseAudio()">Pause</button> -->
+
+
+
+        <div class="list">
+           <ul>
+              <li><button id="reset"><i class="fa fa-sync"></i></button></li>
+            
+              <li><button id="question" ><i class="far fa-calendar-alt"></i>
+</button></li>
+<!--               <li><button><i class="fas fa-lock"></i></button></li> -->
+              <li><button onclick="kurangSatu()" id="kurang"><i class="fas fa-minus"></i></button></li>
+           </ul>
+        </div>
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Masukkan Target Anda</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <label for="target">Target:</label>
+        <input type="number" id="target">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="setTarget()">Simpan</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <div class="tengah p-3">
+  <h3 class="p-2">Target : <span id="target-display"></span></h3>
+</div>
+
+
+        <div class="tengah">
+            <button onclick="tambahSatu()" class="zikir2" ><h1 class="text-white" id="angka">0</h1></button>
+        </div>
+        <footer class="text-center text-white">
+          &copy; Rahmad Qolbi Syahrani
+        </footer>
+
+        <script>
+       var target = 999999999;
+  var angka = localStorage.getItem('angka') || 0;
+
+localStorage.setItem('angka', angka);
+  function setTarget() {
+    target = parseInt(document.getElementById("target").value);
+    $("#exampleModal").modal('hide');
+       document.getElementById("target-display").innerHTML = target;
+  }
+  
+if (localStorage.getItem('angka')) {
+  document.getElementById('angka').innerHTML = localStorage.getItem('angka');
+}
+
+
+  function tambahSatu() {
+    var angka = parseInt(document.getElementById("angka").innerHTML);
+     
+    if (angka < target) { 
+      angka++;
+      //jika angka lebih kecil dari target maka angka tambah sat
+      document.getElementById("angka").innerHTML = angka;
+        localStorage.setItem('angka', angka);
+        
+  navigator.vibrate(200); //getar selama 200ms
+      if(angka === target){
+        playAudio();
+      }
+    } else {
+      document.getElementById("kurang").removeEventListener("click", kurangSatu);
+    }
+  }
+  function playAudio() {
+  var audio = document.getElementById("audio");
+  audio.play();
+}
+  
+window.onload = function() {
+  document.getElementById("target").value = "1000";
+}
+  function kurangSatu() {
+    var minus = parseInt(document.getElementById("angka").innerHTML);
+    minus--;
+    document.getElementById("angka").innerHTML = minus;
+  }
+  
+  $("#question").click(function() {
+    $("#exampleModal").modal('show');
+  });
+         
+$(document).ready(function() {
+  $('.zikir-slider').slick({
+    dots: true, // menampilkan navigasi dot
+    infinite: true, // memungkinkan slide tak terbatas
+    speed: 500, // kecepatan slide
+    fade: true, // efek fade pada slide
+    cssEase: 'linear' // jenis animasi yang digunakan
+  });
+});
+        
+
+        var resetBtn = document.getElementById("reset");
+        // Tambahkan event listener untuk menangani klik pada button reset
+        resetBtn.addEventListener("click", function() {
+        // Reset nilai angka menjadi 0
+        document.getElementById("angka").innerHTML = "0";
+        });
+
+       
+  //       $(document).ready(function() {
+  //   $("#question").click(function() {
+  //     $("#exampleModal").modal('show');
+  //   });
+  // });
+
+//         var nightBtn = document.getElementById("nightBtn");
+// nightBtn.addEventListener("click", function() {
+//   // Toggle mode malam
+//   document.body.classList.toggle("night-mode");
+  
+//   // Setel warna latar belakang, warna teks, dan warna ikon
+//   if (document.body.classList.contains("night-mode")) {
+//     nightBtn.style.backgroundColor = "#333";
+//     nightBtn.style.color = "#fff";
+//     nightBtn.querySelector("i").classList.remove("fa-moon");
+//     nightBtn.querySelector("i").classList.add("bi-brightness-high-fill");
+//   } else {
+//     nightBtn.style.backgroundColor = "#fff";
+//     nightBtn.style.color = "#333";
+//     nightBtn.querySelector("i").classList.add("fa-moon");
+//     nightBtn.querySelector("i").classList.remove("bi-brightness-high-fill");
+//   }
+// });
+
+        </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.min.js"></script>
+</body>
+</html>
